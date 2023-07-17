@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from "@mui/material/IconButton";
 import { GitHub } from '@mui/icons-material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Avatar from '@mui/material/Avatar';
 import Alert from '@mui/material/Alert';
 import Badge from '@mui/material/Badge';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -165,46 +166,58 @@ export default function Body() {
         </Box>
         <Box component='div' sx={{ mb: '100px', width: '100%', display: {md: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}}>
           <Box className='info-tile'>
-            <Typography>
+            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+              <Avatar src='../assets/wolf.jpg' sx={{ height: 170, width: 170}} />
+            </Box>
+            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Anthony Le
             </Typography>
             <IconButton href='https://github.com/anthonyle910'>
               <GitHub />
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/anthony-le-616b4b101/'>
               <LinkedInIcon />
             </IconButton>
           </Box>
           <Box className='info-tile'>
-            <Typography>
+          <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+              <Avatar src='../assets/wolf.jpg' sx={{ height: 170, width: 170}} />
+            </Box>
+            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Cyrux Lam
             </Typography>
             <IconButton href='https://github.com/cyduckk'>
               <GitHub />
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/cyrux-lam-a45141133/'>
               <LinkedInIcon />
             </IconButton>
           </Box>
           <Box className='info-tile'>
-            <Typography>
+          <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+              <Avatar src='../assets/wolf.jpg' sx={{ height: 170, width: 170}} />
+            </Box>
+            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Grant Thomas
             </Typography>
             <IconButton href='https://github.com/GrantCT'>
               <GitHub />
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/grantcthomas/'> 
               <LinkedInIcon />
             </IconButton>
           </Box>
           <Box className='info-tile'>
-          <Typography>
+          <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+              <Avatar src='../assets/wolf.jpg' sx={{ height: 170, width: 170}} />
+            </Box>
+          <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Jordan Zolman
             </Typography>
             <IconButton href='https://github.com/PrincePuggo'>
               <GitHub />
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/jordanzolman/'>
               <LinkedInIcon />
             </IconButton>
           </Box>

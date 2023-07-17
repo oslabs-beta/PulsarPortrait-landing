@@ -1,26 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@300&family=Russo+One&display=swap');
 $white: #e6e6e6;
 $off-white: #cbcbcb;
-// for headings 
 $dark-black: #212121;
-// for 
 $light-black: #2c2c2c;
-// for text content
 $lightest-black: #6d6d6d;
 $grey: #e0e0e0;
 $button-color: rgba(149, 149, 149, 0.419);
 $dark-grey: #4e4e4e;
 $purple: #990ecc;
 $pink: #f893fadd;
-
+$code-purple: #c145ff;
 $green: #52f322;
+
 body {
   font-family: 'Rajdhani', sans-serif;
-  // background: radial-gradient(circle at 90% 5%, rgb(147, 24, 204) 0%, rgb(118, 37, 231) 99.4%);
+  // background-color: yellow;
   background: linear-gradient(45deg, blue, 45%, $purple);
-  // background-image: url('../assets/pp_logo.png');
-  background-repeat: no-repeat;
+  
 }
+
 
 * {
   margin: 0;
@@ -62,4 +60,5 @@ body {
   background: linear-gradient(rgba(242, 46, 249, 0.363), rgba(225, 157, 240, 0.197));
   border-radius: 10px;
   text-align: center;
+
 }
