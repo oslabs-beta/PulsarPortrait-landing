@@ -57,13 +57,13 @@ export default function Body() {
           height: '100vh',
           display: {md: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center'}
         }}>
-        <Box component='h1' sx={{ width: '100%', fontSize: '3.5rem', color: '#ffff', letterSpacing: '.3rem', textAlign: 'right'}}>
+        <Box component='h1' sx={{ width: '100%', mr: '10%', fontSize: '3.5rem', color: '#ffff', letterSpacing: '.3rem', textAlign: 'right'}}>
           PulsarPortrait
         </Box>
-          <Box component='p' sx={{ maxWidth: '40%', color: '#ffff', fontSize: '1.8rem'}}>
+          <Box component='p' sx={{ maxWidth: '40%',mr: '10%', color: '#ffff', fontSize: '1.8rem'}}>
             PulsarPortait is a tool made for developers to help visualize Apache Pulsar cluster metrics.
         </Box>
-        <Box sx={{display: {md: 'flex'}}}>
+        <Box sx={{mr: '10%', display: {md: 'flex'}}}>
           <Button
             href='#get-started'
             key='get-started'
@@ -79,7 +79,37 @@ export default function Body() {
           </Button>
         </Box>
       </Container>
-
+      <Container 
+        id='features'
+        maxWidth={false}
+        sx={{
+          bgcolor: '#cbcbcb',
+          maxWidth: '100%',
+          display: {md: 'flex'},
+          pt: '2%',
+          pb: '2%'
+        }}>
+          <Container 
+            sx={{
+              display: {md: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}
+            }}>
+            <Box sx={{ fontSize: '2.5rem', color: '#2c2c2c', letterSpacing: '.3rem', mt: '5%', textAlign: 'center'}}>
+              Features
+            </Box>        
+            <Box component='p' sx={{ fontSize: '1.8rem'}}>
+              View critical pulsar broker metrics like throughput, backlog, CPU resource consumption and more. 
+            </Box>
+          </Container>
+          <Container
+            id='screenshots'
+            sx={{
+              display: {md: 'flex', flexDirection: 'column'}
+            }}
+          >
+            <Box component='img' src='../assets/The-trouble-with-graphs.jpg' sx={{m: '2%'}} />
+            <Box component='img' src='../assets/The-trouble-with-graphs.jpg' sx={{ m: '2%'}} />
+          </Container>
+      </Container>
       <Container 
         id='get-started'
         maxWidth={false}
@@ -91,13 +121,16 @@ export default function Body() {
         <Box component='h1' sx={{ width: '100%', fontSize: '2.5rem', color: '#2c2c2c', letterSpacing: '.3rem', mt: '5%', textAlign: 'center'}}>
           Install
         </Box>
-        <Box component='p' sx={{ maxWidth: '100%', color: '#2c2c2c', fontSize: '1.8rem', pb: '20px', textAlign: 'center'}}>
+        <Box component='p' sx={{ maxWidth: '100%', color: '#2c2c2c', fontSize: '1.8rem', pb: '10px', textAlign: 'center'}}>
             To install, simply copy and paste this code into the services dictionary in your <code id='compose-code'>compose.yml</code> file.
+        </Box>
+        <Box component='p' sx={{pb: '10px'}}>
+          * Our application's default image networks are set to <strong>pulsar</strong>, if your network names are different, be sure to update the compose.yml with your network name.
         </Box>
         <Box component='div' sx={{display: {md: 'flex', justifyContent: 'center'}}}>
         <Box component='div' id='code-container' sx={{ width: '100%', bgcolor: '#212121', borderRadius: '10px', p: '20px', mb: '20px', display: {md: 'flex', justifyContent: 'space-between', alignItems: 'start'}}}>
             <Box component='pre' sx={{whiteSpace: 'pre', overflowX: 'auto'}}>
-              <Box component='code' sx={{color: '#9121c6', fontSize: '1rem'}}>
+              <Box component='code' sx={{color: '#c145ff', fontSize: '1rem'}}>
                 {code}
               </Box>
             </Box>

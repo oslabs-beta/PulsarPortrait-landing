@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 })
 
 
-  app.use((req,res) => res.status(404).send('Error, not the page you are looking for'));
+app.use((req,res) => res.status(404).send('Error, not the page you are looking for'));
 
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`))

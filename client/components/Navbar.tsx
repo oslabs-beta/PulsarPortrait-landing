@@ -35,18 +35,6 @@ function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Button
-                key='Docs'
-                sx={{ my: 2, color: '#ffff', display: 'block' }}
-              >
-                Docs
-              </Button>
-              <Button
-                key='Demo'
-                sx={{ my: 2, color: '#ffff', display: 'block' }}
-              >
-                Demo
-              </Button>
-              <Button
                 href='#contact-section'
                 key='Contact'
                 sx={{ my: 2, color: '#ffff', display: 'block' }}
