@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from "@mui/material/IconButton";
 import { GitHub } from '@mui/icons-material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Avatar from '@mui/material/Avatar';
 import Alert from '@mui/material/Alert';
 import Badge from '@mui/material/Badge';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -91,23 +92,19 @@ export default function Body() {
         }}>
           <Container 
             sx={{
-              display: {md: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}
+              display: {md: 'flex', width:'30%', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}
             }}>
             <Box sx={{ fontSize: '2.5rem', color: '#2c2c2c', letterSpacing: '.3rem', mt: '5%', textAlign: 'center'}}>
               Features
             </Box>        
-            <Box component='p' sx={{ fontSize: '1.8rem'}}>
+            <Box component='p' sx={{ fontSize: '1.8em'}}>
               View critical pulsar broker metrics like throughput, backlog, CPU resource consumption and more. 
             </Box>
           </Container>
           <Container
             id='screenshots'
-            sx={{
-              display: {md: 'flex', flexDirection: 'column'}
-            }}
-          >
-            <Box component='img' src='../assets/The-trouble-with-graphs.jpg' sx={{m: '2%'}} />
-            <Box component='img' src='../assets/The-trouble-with-graphs.jpg' sx={{ m: '2%'}} />
+            >
+            <Box component='img' src='../assets/preview.png' sx={{m: '2%', width: '100%', height: 'auto', borderRadius: '10px'}} />
           </Container>
       </Container>
       <Container 
@@ -165,46 +162,58 @@ export default function Body() {
         </Box>
         <Box component='div' sx={{ mb: '100px', width: '100%', display: {md: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}}>
           <Box className='info-tile'>
-            <Typography>
+            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+              <Avatar src='../assets/Anthony.png' sx={{ height: 170, width: 170}} />
+            </Box>
+            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Anthony Le
             </Typography>
             <IconButton href='https://github.com/anthonyle910'>
               <GitHub />
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/anthony-le-616b4b101/'>
               <LinkedInIcon />
             </IconButton>
           </Box>
           <Box className='info-tile'>
-            <Typography>
+          <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+              <Avatar src='../assets/Cyrux.jpg' sx={{ height: 170, width: 170}} />
+            </Box>
+            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Cyrux Lam
             </Typography>
             <IconButton href='https://github.com/cyduckk'>
               <GitHub />
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/cyrux-lam-a45141133/'>
               <LinkedInIcon />
             </IconButton>
           </Box>
           <Box className='info-tile'>
-            <Typography>
-              Grant Thomas
-            </Typography>
-            <IconButton href='https://github.com/GrantCT'>
-              <GitHub />
-            </IconButton>
-            <IconButton>
-              <LinkedInIcon />
-            </IconButton>
-          </Box>
+            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+                <Avatar src='../assets/Grant.jpg' sx={{ height: 170, width: 170}} />
+              </Box>
+              <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
+                Grant Thomas
+              </Typography>
+              <IconButton href='https://github.com/GrantCT'>
+                <GitHub />
+              </IconButton>
+              <IconButton href='https://www.linkedin.com/in/grantcthomas/'> 
+                <LinkedInIcon />
+              </IconButton>
+            </Box>
           <Box className='info-tile'>
-          <Typography>
+            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+              <Avatar src='../assets/Jordan.jpg' sx={{ height: 170, width: 170}} />
+            </Box>
+            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Jordan Zolman
             </Typography>
             <IconButton href='https://github.com/PrincePuggo'>
               <GitHub />
             </IconButton>
-            <IconButton>
+            <IconButton href='https://www.linkedin.com/in/jordanzolman/'>
               <LinkedInIcon />
             </IconButton>
           </Box>
