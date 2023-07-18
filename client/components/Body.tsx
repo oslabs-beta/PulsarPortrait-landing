@@ -92,23 +92,19 @@ export default function Body() {
         }}>
           <Container 
             sx={{
-              display: {md: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}
+              display: {md: 'flex', width:'30%', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}
             }}>
             <Box sx={{ fontSize: '2.5rem', color: '#2c2c2c', letterSpacing: '.3rem', mt: '5%', textAlign: 'center'}}>
               Features
             </Box>        
-            <Box component='p' sx={{ fontSize: '1.8rem'}}>
+            <Box component='p' sx={{ fontSize: '1.8em'}}>
               View critical pulsar broker metrics like throughput, backlog, CPU resource consumption and more. 
             </Box>
           </Container>
           <Container
             id='screenshots'
-            sx={{
-              display: {md: 'flex', flexDirection: 'column'}
-            }}
-          >
-            <Box component='img' src='../assets/The-trouble-with-graphs.jpg' sx={{m: '2%'}} />
-            <Box component='img' src='../assets/The-trouble-with-graphs.jpg' sx={{ m: '2%'}} />
+            >
+            <Box component='img' src='../assets/preview.png' sx={{m: '2%', width: '100%', height: 'auto', borderRadius: '10px'}} />
           </Container>
       </Container>
       <Container 
@@ -167,7 +163,7 @@ export default function Body() {
         <Box component='div' sx={{ mb: '100px', width: '100%', display: {md: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}}>
           <Box className='info-tile'>
             <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
-              <Avatar src='../assets/wolf.jpg' sx={{ height: 170, width: 170}} />
+              <Avatar src='../assets/Anthony.png' sx={{ height: 170, width: 170}} />
             </Box>
             <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Anthony Le
@@ -181,7 +177,7 @@ export default function Body() {
           </Box>
           <Box className='info-tile'>
           <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
-              <Avatar src='../assets/wolf.jpg' sx={{ height: 170, width: 170}} />
+              <Avatar src='../assets/Cyrux.jpg' sx={{ height: 170, width: 170}} />
             </Box>
             <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Cyrux Lam
@@ -194,24 +190,24 @@ export default function Body() {
             </IconButton>
           </Box>
           <Box className='info-tile'>
-          <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
-              <Avatar src='../assets/wolf.jpg' sx={{ height: 170, width: 170}} />
+            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+                <Avatar src='../assets/Grant.jpg' sx={{ height: 170, width: 170}} />
+              </Box>
+              <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
+                Grant Thomas
+              </Typography>
+              <IconButton href='https://github.com/GrantCT'>
+                <GitHub />
+              </IconButton>
+              <IconButton href='https://www.linkedin.com/in/grantcthomas/'> 
+                <LinkedInIcon />
+              </IconButton>
+            </Box>
+          <Box className='info-tile'>
+            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
+              <Avatar src='../assets/Jordan.jpg' sx={{ height: 170, width: 170}} />
             </Box>
             <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
-              Grant Thomas
-            </Typography>
-            <IconButton href='https://github.com/GrantCT'>
-              <GitHub />
-            </IconButton>
-            <IconButton href='https://www.linkedin.com/in/grantcthomas/'> 
-              <LinkedInIcon />
-            </IconButton>
-          </Box>
-          <Box className='info-tile'>
-          <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
-              <Avatar src='../assets/wolf.jpg' sx={{ height: 170, width: 170}} />
-            </Box>
-          <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
               Jordan Zolman
             </Typography>
             <IconButton href='https://github.com/PrincePuggo'>
