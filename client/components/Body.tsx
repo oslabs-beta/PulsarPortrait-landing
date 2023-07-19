@@ -13,6 +13,7 @@ import Avatar from '@mui/material/Avatar';
 import Alert from '@mui/material/Alert';
 import Badge from '@mui/material/Badge';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Link } from 'react-scroll';
 
 export default function Body() {
   const [clicked, setClicked] = useState(false);
@@ -96,39 +97,39 @@ export default function Body() {
           Pulsar cluster metrics.
         </Box>
         <Box sx={{ mr: '10%', display: { md: 'flex' } }}>
-          <Button
-            className='getStarted'
-            href='#get-started'
-            key='get-started'
-            sx={{
-              my: 2,
-              mr: '5px',
-              color: 'black',
-              boxShadow: '0px 3px 7px rgba(0,0,0,0.2)',
-              bgcolor: 'yellow',
-              display: 'block',
-              ':hover': {
-                bgcolor: 'rgba(149, 149, 149, 0.419)',
+          <Link to='get-started' smooth={true} duration={500} offset={-70}>
+            <Button
+              sx={{
+                my: 2,
+                mr: '5px',
+                color: 'black',
+                boxShadow: '0px 3px 7px rgba(0,0,0,0.2)',
+                bgcolor: 'yellow',
+                display: 'block',
+                ':hover': {
+                  bgcolor: 'rgba(149, 149, 149, 0.419)',
+                  color: 'white',
+                },
+              }}
+            >
+              Get Started
+            </Button>
+          </Link>
+          <Link to='features' smooth={true} duration={500} offset={-200}>
+            <Button
+              sx={{
+                my: 2,
                 color: 'white',
-              },
-            }}
-          >
-            Get Started
-          </Button>
-          <Button
-            key='learn-more'
-            sx={{
-              my: 2,
-              color: 'white',
-              boxShadow: '0px 3px 7px rgba(0,0,0,0.2)',
-              bgcolor: '#e0e0e028',
-              border: '1px solid #cbcbcb',
-              display: 'block',
-              ':hover': { bgcolor: '#e0e0e048', color: 'white' },
-            }}
-          >
-            Learn More
-          </Button>
+                boxShadow: '0px 3px 7px rgba(0,0,0,0.2)',
+                bgcolor: '#e0e0e028',
+                border: '1px solid #cbcbcb',
+                display: 'block',
+                ':hover': { bgcolor: '#e0e0e048', color: 'white' },
+              }}
+            >
+              Learn More
+            </Button>
+          </Link>
         </Box>
       </Container>
       <Container

@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/oslabs-beta/PulsarPortrait-landing.git"
   },
-   "dependencies": {
+  "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.13.7",
@@ -25,13 +25,14 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
+    "react-scroll": "^1.8.9",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
     "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   },
-   "devDependencies": {
+  "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/plugin-transform-modules-commonjs": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
