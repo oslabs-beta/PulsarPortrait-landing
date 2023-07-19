@@ -1,22 +1,29 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Typography } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Button from '@mui/material/Button';
-import IconButton from "@mui/material/IconButton";
+import IconButton from '@mui/material/IconButton';
+import CheckIcon from '@mui/icons-material/Check';
 import { GitHub } from '@mui/icons-material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Avatar from '@mui/material/Avatar';
 import Alert from '@mui/material/Alert';
 import Badge from '@mui/material/Badge';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Link } from 'react-scroll';
 
 export default function Body() {
-
+  const [clicked, setClicked] = useState(false);
   function copyCode() {
     navigator.clipboard.writeText(code);
+    setClicked(true);
 
+    setTimeout(() => {
+      setClicked(false);
+    }, 3000);
   }
 
   const code = `
@@ -29,7 +36,7 @@ export default function Body() {
       - "9090:9090"
 
   pulsarportrait:
-    image: pulsarportrait/webapp:latest
+    image: pulsarportrait/app:latest
     container_name: pulsarportrait
     networks:
       - pulsar
@@ -45,127 +52,302 @@ export default function Body() {
       - "2222:3000"
     depends_on:
       - prometheus
-  `
+  `;
   return (
     <>
-      <Container 
+      <Container
         maxWidth={false}
         id='header'
-        sx={{ 
+        sx={{
           // background: 'radial-gradient(circle at 90% 5%, rgb(147, 24, 204) 0%, rgb(118, 37, 231) 99.4%)',
           // bgcolor: '#e0e0e0',
           maxWidth: '100%',
           height: '100vh',
-          display: {md: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center'}
-        }}>
-        <Box component='h1' sx={{ width: '100%', mr: '10%', fontSize: '3.5rem', color: '#ffff', letterSpacing: '.3rem', textAlign: 'right'}}>
+          display: {
+            md: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            justifyContent: 'center',
+          },
+        }}
+      >
+        <Box
+          component='h1'
+          sx={{
+            width: '100%',
+            mr: '10%',
+            fontSize: '3.5rem',
+            color: '#ffff',
+            letterSpacing: '.3rem',
+            textAlign: 'right',
+          }}
+        >
           PulsarPortrait
         </Box>
-          <Box component='p' sx={{ maxWidth: '40%',mr: '10%', color: '#ffff', fontSize: '1.8rem'}}>
-            PulsarPortait is a tool made for developers to help visualize Apache Pulsar cluster metrics.
+        <Box
+          component='p'
+          sx={{
+            maxWidth: '40%',
+            mr: '10%',
+            color: '#ffff',
+            fontSize: '1.8rem',
+          }}
+        >
+          PulsarPortait is a tool made for developers to help visualize Apache
+          Pulsar cluster metrics.
         </Box>
-        <Box sx={{mr: '10%', display: {md: 'flex'}}}>
-          <Button
-            href='#get-started'
-            key='get-started'
-            sx={{ my: 2, mr: '5px', color: 'black', boxShadow: '0px 3px 7px rgba(0,0,0,0.2)', bgcolor: 'yellow', display: 'block', ':hover': {bgcolor: 'rgba(149, 149, 149, 0.419)', color: 'white'}}}
+        <Box sx={{ mr: '10%', display: { md: 'flex' } }}>
+          <Link to='get-started' smooth={true} duration={500} offset={-70}>
+            <Button
+              sx={{
+                my: 2,
+                mr: '5px',
+                color: 'black',
+                boxShadow: '0px 3px 7px rgba(0,0,0,0.2)',
+                bgcolor: 'yellow',
+                display: 'block',
+                ':hover': {
+                  bgcolor: 'rgba(149, 149, 149, 0.419)',
+                  color: 'white',
+                },
+              }}
             >
               Get Started
-          </Button>
-          <Button
-            key='learn-more'
-            sx={{ my: 2, color: 'white',  boxShadow: '0px 3px 7px rgba(0,0,0,0.2)', bgcolor: '#e0e0e028', border: '1px solid #cbcbcb', display: 'block', ':hover': {bgcolor: '#e0e0e048', color: 'white'}}}
+            </Button>
+          </Link>
+          <Link to='features' smooth={true} duration={500} offset={-200}>
+            <Button
+              sx={{
+                my: 2,
+                color: 'white',
+                boxShadow: '0px 3px 7px rgba(0,0,0,0.2)',
+                bgcolor: '#e0e0e028',
+                border: '1px solid #cbcbcb',
+                display: 'block',
+                ':hover': { bgcolor: '#e0e0e048', color: 'white' },
+              }}
             >
               Learn More
-          </Button>
+            </Button>
+          </Link>
         </Box>
       </Container>
-      <Container 
+      <Container
         id='features'
         maxWidth={false}
         sx={{
           bgcolor: '#cbcbcb',
           maxWidth: '100%',
-          display: {md: 'flex'},
+          display: { md: 'flex' },
           pt: '2%',
-          pb: '2%'
-        }}>
-          <Container 
+          pb: '2%',
+        }}
+      >
+        <Container
+          sx={{
+            display: {
+              md: 'flex',
+              width: '30%',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+            },
+          }}
+        >
+          <Box
             sx={{
-              display: {md: 'flex', width:'30%', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start'}
-            }}>
-            <Box sx={{ fontSize: '2.5rem', color: '#2c2c2c', letterSpacing: '.3rem', mt: '5%', textAlign: 'center'}}>
-              Features
-            </Box>        
-            <Box component='p' sx={{ fontSize: '1.8em'}}>
-              View critical pulsar broker metrics like throughput, backlog, CPU resource consumption and more. 
-            </Box>
-          </Container>
-          <Container
-            id='screenshots'
-            >
-            <Box component='img' src='../assets/preview.png' sx={{m: '2%', width: '100%', height: 'auto', borderRadius: '10px'}} />
-          </Container>
+              fontSize: '2.5rem',
+              color: '#2c2c2c',
+              letterSpacing: '.3rem',
+              mt: '5%',
+              textAlign: 'center',
+            }}
+          >
+            Features
+          </Box>
+          <Box component='p' sx={{ fontSize: '1.8em' }}>
+            View critical pulsar broker metrics like throughput, backlog, CPU
+            resource consumption and more.
+          </Box>
+        </Container>
+        <Container id='screenshots'>
+          <Box
+            component='img'
+            src='../assets/preview.png'
+            sx={{
+              m: '2%',
+              width: '100%',
+              height: 'auto',
+              borderRadius: '10px',
+            }}
+          />
+        </Container>
       </Container>
-      <Container 
+      <Container
         id='get-started'
         maxWidth={false}
         sx={{
           bgcolor: '#ffff',
           maxWidth: '100%',
-          display: {md: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}
-        }}>
-        <Box component='h1' sx={{ width: '100%', fontSize: '2.5rem', color: '#2c2c2c', letterSpacing: '.3rem', mt: '5%', textAlign: 'center'}}>
+          display: {
+            md: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
+        }}
+      >
+        <Box
+          component='h1'
+          sx={{
+            width: '100%',
+            fontSize: '2.5rem',
+            color: '#2c2c2c',
+            letterSpacing: '.3rem',
+            mt: '5%',
+            textAlign: 'center',
+          }}
+        >
           Install
         </Box>
-        <Box component='p' sx={{ maxWidth: '100%', color: '#2c2c2c', fontSize: '1.8rem', pb: '10px', textAlign: 'center'}}>
-            To install, simply copy and paste this code into the services dictionary in your <code id='compose-code'>compose.yml</code> file.
+        <Box
+          component='p'
+          sx={{
+            maxWidth: '100%',
+            color: '#2c2c2c',
+            fontSize: '1.8rem',
+            pb: '10px',
+            textAlign: 'center',
+          }}
+        >
+          To install, simply copy and paste this code into the services
+          dictionary in your <code id='compose-code'>compose.yml</code> file.
         </Box>
-        <Box component='p' sx={{pb: '10px'}}>
-          * Our application's default image networks are set to <strong>pulsar</strong>, if your network names are different, be sure to update the compose.yml with your network name.
+        <Box component='p' sx={{ pb: '10px' }}>
+          * Our application's default image networks are set to{' '}
+          <strong>pulsar</strong>, if your network names are different, be sure
+          to update the compose.yml with your network name.
         </Box>
-        <Box component='div' sx={{display: {md: 'flex', justifyContent: 'center'}}}>
-        <Box component='div' id='code-container' sx={{ width: '100%', bgcolor: '#212121', borderRadius: '10px', p: '20px', mb: '20px', display: {md: 'flex', justifyContent: 'space-between', alignItems: 'start'}}}>
-            <Box component='pre' sx={{whiteSpace: 'pre', overflowX: 'auto'}}>
-              <Box component='code' sx={{color: '#c145ff', fontSize: '1rem'}}>
+        <Box
+          component='div'
+          sx={{ display: { md: 'flex', justifyContent: 'center' } }}
+        >
+          <Box
+            component='div'
+            id='code-container'
+            sx={{
+              width: '100%',
+              bgcolor: '#212121',
+              borderRadius: '10px',
+              p: '20px',
+              mb: '20px',
+              display: {
+                md: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'start',
+              },
+            }}
+          >
+            <Box component='pre' sx={{ whiteSpace: 'pre', overflowX: 'auto' }}>
+              <Box component='code' sx={{ color: '#c145ff', fontSize: '1rem' }}>
                 {code}
               </Box>
             </Box>
             <IconButton onClick={copyCode}>
-              <Badge 
-              // <CheckCircleIcon />
-                badgeContent={null} 
-                anchorOrigin={{vertical: 'top', horizontal: 'left'}}
-                sx={{color: '#52f322'}}>
-                  <ContentCopyIcon sx={{color: 'white'}} />
+              <Badge
+                // <CheckCircleIcon />
+                badgeContent={
+                  clicked ? <CheckCircleIcon sx={{ color: '#52f322' }} /> : null
+                }
+                anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+                sx={{ color: '#52f322' }}
+              >
+                <ContentCopyIcon sx={{ color: 'white' }} />
               </Badge>
             </IconButton>
           </Box>
         </Box>
-        <Box component='h1' sx={{ width: '100%', fontSize: '2.5rem', color: '#2c2c2c', letterSpacing: '.3rem', mt: '5%', textAlign: 'center'}}>
+        <Box
+          component='h1'
+          sx={{
+            width: '100%',
+            fontSize: '2.5rem',
+            color: '#2c2c2c',
+            letterSpacing: '.3rem',
+            mt: '5%',
+            textAlign: 'center',
+          }}
+        >
           Alternatively,
         </Box>
-        <Box component='p' sx={{ width: '100%', color: '#2c2c2c', fontSize: '1.8rem', pb: '20px', textAlign: 'center'}}> 
-          Fork the repo from our github organization, spin up your Apache Pulsar cluster, then run <code>docker compose up</code> in your terminal.
+        <Box
+          component='p'
+          sx={{
+            width: '100%',
+            color: '#2c2c2c',
+            fontSize: '1.8rem',
+            pb: '20px',
+            textAlign: 'center',
+          }}
+        >
+          Fork the repo from our github organization, spin up your Apache Pulsar
+          cluster, then run <code>docker compose up</code> in your terminal.
         </Box>
       </Container>
-      <Container 
+      <Container
         id='contact-section'
         maxWidth={false}
-        sx={{ 
+        sx={{
           bgcolor: '#cbcbcb',
           maxWidth: '100%',
-          display: {md: 'flex', flexDirection: 'column', alignItems: 'flex-start'}
-        }}>
-        <Box component='h1' sx={{ width: '100%', mb: '100px', fontSize: '3rem', color: '#2c2c2c', letterSpacing: '.3rem', mt: '5%', textAlign: 'center'}}>
+          display: {
+            md: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+          },
+        }}
+      >
+        <Box
+          component='h1'
+          sx={{
+            width: '100%',
+            mb: '100px',
+            fontSize: '3rem',
+            color: '#2c2c2c',
+            letterSpacing: '.3rem',
+            mt: '5%',
+            textAlign: 'center',
+          }}
+        >
           Our Team
         </Box>
-        <Box component='div' sx={{ mb: '100px', width: '100%', display: {md: 'flex', justifyContent: 'space-evenly', alignItems: 'center'}}}>
+        <Box
+          component='div'
+          sx={{
+            mb: '100px',
+            width: '100%',
+            display: {
+              md: 'flex',
+              justifyContent: 'space-evenly',
+              alignItems: 'center',
+            },
+          }}
+        >
           <Box className='info-tile'>
-            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
-              <Avatar src='../assets/Anthony.png' sx={{ height: 170, width: 170}} />
+            <Box
+              sx={{
+                m: '10%',
+                display: { md: 'flex', justifyContent: 'center' },
+              }}
+            >
+              <Avatar
+                src='../assets/Anthony.png'
+                sx={{ height: 170, width: 170 }}
+              />
             </Box>
-            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
+            <Typography
+              sx={{ fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif' }}
+            >
               Anthony Le
             </Typography>
             <IconButton href='https://github.com/anthonyle910'>
@@ -176,10 +358,20 @@ export default function Body() {
             </IconButton>
           </Box>
           <Box className='info-tile'>
-          <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
-              <Avatar src='../assets/Cyrux.jpg' sx={{ height: 170, width: 170}} />
+            <Box
+              sx={{
+                m: '10%',
+                display: { md: 'flex', justifyContent: 'center' },
+              }}
+            >
+              <Avatar
+                src='../assets/Cyrux.jpg'
+                sx={{ height: 170, width: 170 }}
+              />
             </Box>
-            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
+            <Typography
+              sx={{ fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif' }}
+            >
               Cyrux Lam
             </Typography>
             <IconButton href='https://github.com/cyduckk'>
@@ -190,24 +382,44 @@ export default function Body() {
             </IconButton>
           </Box>
           <Box className='info-tile'>
-            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
-                <Avatar src='../assets/Grant.jpg' sx={{ height: 170, width: 170}} />
-              </Box>
-              <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
-                Grant Thomas
-              </Typography>
-              <IconButton href='https://github.com/GrantCT'>
-                <GitHub />
-              </IconButton>
-              <IconButton href='https://www.linkedin.com/in/grantcthomas/'> 
-                <LinkedInIcon />
-              </IconButton>
+            <Box
+              sx={{
+                m: '10%',
+                display: { md: 'flex', justifyContent: 'center' },
+              }}
+            >
+              <Avatar
+                src='../assets/Grant.jpg'
+                sx={{ height: 170, width: 170 }}
+              />
             </Box>
+            <Typography
+              sx={{ fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif' }}
+            >
+              Grant Thomas
+            </Typography>
+            <IconButton href='https://github.com/GrantCT'>
+              <GitHub />
+            </IconButton>
+            <IconButton href='https://www.linkedin.com/in/grantcthomas/'>
+              <LinkedInIcon />
+            </IconButton>
+          </Box>
           <Box className='info-tile'>
-            <Box sx={{m: '10%', display: {md: 'flex', justifyContent: 'center'}}}>
-              <Avatar src='../assets/Jordan.jpg' sx={{ height: 170, width: 170}} />
+            <Box
+              sx={{
+                m: '10%',
+                display: { md: 'flex', justifyContent: 'center' },
+              }}
+            >
+              <Avatar
+                src='../assets/Jordan.jpg'
+                sx={{ height: 170, width: 170 }}
+              />
             </Box>
-            <Typography sx={{fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif'}}>
+            <Typography
+              sx={{ fontSize: '1.5rem', fontFamily: 'Rajdhani, sans-serif' }}
+            >
               Jordan Zolman
             </Typography>
             <IconButton href='https://github.com/PrincePuggo'>
@@ -220,5 +432,5 @@ export default function Body() {
         </Box>
       </Container>
     </>
-  )
+  );
 }
