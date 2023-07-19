@@ -74,14 +74,33 @@ export default function Body() {
         <Box
           sx={{
             width: '100%',
-            mr: '10%',
-            fontSize: '3.5rem',
-            color: '#ffff',
-            letterSpacing: '.3rem',
-            textAlign: 'right',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            mt: '-15%',
           }}
         >
-          PulsarPortrait
+          <Avatar
+            src='https://cdn.discordapp.com/attachments/1120822627880144916/1131335983279906918/LogoTransparent.png'
+            sx={{
+              height: '700px',
+              width: '500px',
+              alignItems: 'left',
+              ml: '5%',
+            }}
+          />
+          <Box
+            sx={{
+              fontSize: '3.5rem',
+              color: '#ffff',
+              letterSpacing: '.3rem',
+              textAlign: 'right',
+              flex: 1,
+              mb: '-5%',
+            }}
+          >
+            PulsarPortrait
+          </Box>
         </Box>
         <Box
           component='p'
@@ -90,6 +109,7 @@ export default function Body() {
             mr: '10%',
             color: '#ffff',
             fontSize: '1.8rem',
+            mt: '-18%',
           }}
         >
           PulsarPortait is a tool made for developers to help visualize Apache
@@ -172,7 +192,7 @@ export default function Body() {
         <Container id='screenshots'>
           <Box
             component='img'
-            src='../assets/preview.png'
+            src='https://cdn.discordapp.com/attachments/1120822627880144916/1131305167929737276/ppdemogif.gif'
             sx={{
               m: '2%',
               width: '100%',
@@ -289,8 +309,19 @@ export default function Body() {
             textAlign: 'center',
           }}
         >
-          Fork the repo from our github organization, spin up your Apache Pulsar
-          cluster, then run <code>docker compose up</code> in your terminal.
+          if you already have a project that uses Pulsar and do not want to edit
+          your compose.yml file, please fork and clone our{' '}
+          <a
+            href='https://github.com/oslabs-beta/PulsarPortrait/blob/main/README.md'
+            target='._blank'
+            style={{
+              color: '#1976d2',
+              textDecoration: 'underline',
+            }}
+          >
+            GitHub Repo
+          </a>{' '}
+          and follow the instructions in the README
         </Box>
       </Container>
       <Container
@@ -340,7 +371,7 @@ export default function Body() {
               }}
             >
               <Avatar
-                src='../assets/Anthony.png'
+                src='https://cdn.discordapp.com/attachments/1120822627880144916/1131331274074751137/Anthony.png'
                 sx={{ height: 170, width: 170 }}
               />
             </Box>
@@ -364,7 +395,7 @@ export default function Body() {
               }}
             >
               <Avatar
-                src='../assets/Cyrux.jpg'
+                src='https://cdn.discordapp.com/attachments/1120822627880144916/1131331274733269092/Cyrux.jpg'
                 sx={{ height: 170, width: 170 }}
               />
             </Box>
@@ -388,7 +419,7 @@ export default function Body() {
               }}
             >
               <Avatar
-                src='../assets/Grant.jpg'
+                src='https://cdn.discordapp.com/attachments/1120822627880144916/1131331275240783932/Grant.jpg'
                 sx={{ height: 170, width: 170 }}
               />
             </Box>
@@ -412,7 +443,7 @@ export default function Body() {
               }}
             >
               <Avatar
-                src='../assets/Jordan.jpg'
+                src='https://cdn.discordapp.com/attachments/1120822627880144916/1131331275609866290/Jordan.JPG'
                 sx={{ height: 170, width: 170 }}
               />
             </Box>
