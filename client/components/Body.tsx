@@ -97,7 +97,7 @@ export default function Body() {
           Pulsar cluster metrics.
         </Box>
         <Box sx={{ mr: '10%', display: { md: 'flex' } }}>
-          <Link to='get-started' smooth={true} duration={500}>
+          <Link to='get-started' smooth={true} duration={500} offset={-70}>
             <Button
               sx={{
                 my: 2,
