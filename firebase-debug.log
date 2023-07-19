@@ -1,0 +1,30 @@
+[debug] [2023-07-19T19:28:08.030Z] ----------------------------------------------------------------------
+[debug] [2023-07-19T19:28:08.031Z] Command:       /Users/alicia/.nvm/versions/node/v18.13.0/bin/node /Users/alicia/.nvm/versions/node/v18.13.0/bin/firebase deploy
+[debug] [2023-07-19T19:28:08.032Z] CLI Version:   12.4.4
+[debug] [2023-07-19T19:28:08.032Z] Platform:      darwin
+[debug] [2023-07-19T19:28:08.032Z] Node Version:  v18.13.0
+[debug] [2023-07-19T19:28:08.033Z] Time:          Wed Jul 19 2023 12:28:08 GMT-0700 (Pacific Daylight Time)
+[debug] [2023-07-19T19:28:08.033Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-19T19:28:08.072Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-19T19:28:08.072Z] > authorizing via signed-in user (anthonyle910@gmail.com)
+[debug] [2023-07-19T19:28:08.072Z] [iam] checking project pulsarportrait for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-07-19T19:28:08.073Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/pulsarportrait:testIamPermissions [none]
+[debug] [2023-07-19T19:28:08.073Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/pulsarportrait:testIamPermissions x-goog-quota-user=projects/pulsarportrait
+[debug] [2023-07-19T19:28:08.074Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pulsarportrait:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-19T19:28:08.559Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/pulsarportrait:testIamPermissions 200
+[debug] [2023-07-19T19:28:08.560Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/pulsarportrait:testIamPermissions {}
+[debug] [2023-07-19T19:28:08.560Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project pulsarportrait:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2023-07-19T19:28:08.560Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/pulsarportrait [none]
+[debug] [2023-07-19T19:28:08.951Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/pulsarportrait 403
+[debug] [2023-07-19T19:28:08.951Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/pulsarportrait {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-07-19T19:28:08.952Z] HTTP Error: 403, The caller does not have permission
+[debug] [2023-07-19T19:28:09.194Z] FirebaseError: HTTP Error: 403, The caller does not have permission
+    at responseToError (/Users/alicia/.nvm/versions/node/v18.13.0/lib/node_modules/firebase-tools/lib/responseToError.js:49:12)
+    at RetryOperation._fn (/Users/alicia/.nvm/versions/node/v18.13.0/lib/node_modules/firebase-tools/lib/apiv2.js:289:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project pulsarportrait. Please make sure the project exists and your account has permission to access it.
