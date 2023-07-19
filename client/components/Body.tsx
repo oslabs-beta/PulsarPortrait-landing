@@ -72,7 +72,6 @@ export default function Body() {
         }}
       >
         <Box
-          component='h1'
           sx={{
             width: '100%',
             mr: '10%',
