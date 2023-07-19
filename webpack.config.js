@@ -2,6 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: process.env.NODE_ENV,
   entry: [
     // 'babel-polyfill',
     //    path.resolve(__dirname, './index.js'),
