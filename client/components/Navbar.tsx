@@ -6,21 +6,27 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import IconButton from "@mui/material/IconButton";
+import IconButton from '@mui/material/IconButton';
 import { Icon } from '@mui/material';
-
+import { Link } from 'react-scroll';
 
 function Navbar() {
-
   return (
-    <AppBar position="sticky" >
-      <Container maxWidth="xl" sx={{minWidth: '100%', bgcolor: '#4e4e4e', boxShadow: '0px 3px 2px -1px rgba(0,0,0,0.1)'}}>
+    <AppBar position='sticky'>
+      <Container
+        maxWidth='xl'
+        sx={{
+          minWidth: '100%',
+          bgcolor: '#4e4e4e',
+          boxShadow: '0px 3px 2px -1px rgba(0,0,0,0.1)',
+        }}
+      >
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant='h6'
             noWrap
-            component="a"
-            href="/"
+            component='a'
+            href='/'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -34,16 +40,14 @@ function Navbar() {
             PulsarPortrait
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              <Button
-                href='#contact-section'
-                key='Contact'
-                sx={{ my: 2, color: '#ffff', display: 'block' }}
-              >
+            <Link to='contact-section' smooth={true} duration={500}>
+              <Button sx={{ my: 2, color: '#ffff', display: 'block' }}>
                 Contact
               </Button>
-              <IconButton href='https://github.com/oslabs-beta/PulsarPortrait' >
-                <GitHubIcon sx={{color: '#ffff'}}/>
-              </IconButton>
+            </Link>
+            <IconButton href='https://github.com/oslabs-beta/PulsarPortrait'>
+              <GitHubIcon sx={{ color: '#ffff' }} />
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
