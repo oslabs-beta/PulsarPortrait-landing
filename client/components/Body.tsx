@@ -1,10 +1,12 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import { Typography } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import CheckIcon from '@mui/icons-material/Check';
 import { GitHub } from '@mui/icons-material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Avatar from '@mui/material/Avatar';
@@ -13,8 +15,14 @@ import Badge from '@mui/material/Badge';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 export default function Body() {
+  const [clicked, setClicked] = useState(false);
   function copyCode() {
     navigator.clipboard.writeText(code);
+    setClicked(true);
+
+    setTimeout(() => {
+      setClicked(false);
+    }, 3000);
   }
 
   const code = `
@@ -27,7 +35,7 @@ export default function Body() {
       - "9090:9090"
 
   pulsarportrait:
-    image: pulsarportrait/webapp:latest
+    image: pulsarportrait/app:latest
     container_name: pulsarportrait
     networks:
       - pulsar
@@ -247,7 +255,9 @@ export default function Body() {
             <IconButton onClick={copyCode}>
               <Badge
                 // <CheckCircleIcon />
-                badgeContent={null}
+                badgeContent={
+                  clicked ? <CheckCircleIcon sx={{ color: '#52f322' }} /> : null
+                }
                 anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
                 sx={{ color: '#52f322' }}
               >
