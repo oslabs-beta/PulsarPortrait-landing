@@ -117,7 +117,6 @@ export default function Body() {
           </Link>
           <Link to='features' smooth={true} duration={500} offset={-200}>
             <Button
-              key='learn-more'
               sx={{
                 my: 2,
                 color: 'white',
