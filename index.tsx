@@ -17,7 +17,7 @@ import { getAnalytics } from 'firebase/analytics';
 const firebaseConfig = {
   apiKey: 'AIzaSyA_sl4BwXkJk7rJUvg3qnPoc1m5ZvQOyQM',
   authDomain: 'pulsarportrait.firebaseapp.com',
-  projectId: 'pulsarportrait',
+  projectId: 'pulsarprotrait',
   storageBucket: 'pulsarportrait.appspot.com',
   messagingSenderId: '279941415075',
   appId: '1:279941415075:web:53b3509316252563f6bf16',

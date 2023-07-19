@@ -173,7 +173,7 @@ export default function Body() {
         <Container id='screenshots'>
           <Box
             component='img'
-            src='../assets/preview.png'
+            src='https://cdn.discordapp.com/attachments/1120822627880144916/1131305167929737276/ppdemogif.gif'
             sx={{
               m: '2%',
               width: '100%',
@@ -341,7 +341,7 @@ export default function Body() {
               }}
             >
               <Avatar
-                src='../assets/Anthony.png'
+                src='https://cdn.discordapp.com/attachments/1120822627880144916/1131331274074751137/Anthony.png'
                 sx={{ height: 170, width: 170 }}
               />
             </Box>
@@ -365,7 +365,7 @@ export default function Body() {
               }}
             >
               <Avatar
-                src='../assets/Cyrux.jpg'
+                src='https://cdn.discordapp.com/attachments/1120822627880144916/1131331274733269092/Cyrux.jpg'
                 sx={{ height: 170, width: 170 }}
               />
             </Box>
@@ -389,7 +389,7 @@ export default function Body() {
               }}
             >
               <Avatar
-                src='../assets/Grant.jpg'
+                src='https://cdn.discordapp.com/attachments/1120822627880144916/1131331275240783932/Grant.jpg'
                 sx={{ height: 170, width: 170 }}
               />
             </Box>
@@ -413,7 +413,7 @@ export default function Body() {
               }}
             >
               <Avatar
-                src='../assets/Jordan.jpg'
+                src='https://cdn.discordapp.com/attachments/1120822627880144916/1131331275609866290/Jordan.JPG'
                 sx={{ height: 170, width: 170 }}
               />
             </Box>
