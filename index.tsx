@@ -6,12 +6,6 @@ import './client/styles/styles.scss';
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 
-
-
-
-
-
-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -21,7 +15,7 @@ const firebaseConfig = {
   storageBucket: 'pulsarportrait.appspot.com',
   messagingSenderId: '279941415075',
   appId: '1:279941415075:web:53b3509316252563f6bf16',
-  measurementId: 'G-JZ9YH8PVQ9'
+  measurementId: 'G-JZ9YH8PVQ9',
 };
 
 // Initialize Firebase

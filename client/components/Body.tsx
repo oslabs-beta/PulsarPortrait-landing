@@ -72,17 +72,35 @@ export default function Body() {
         }}
       >
         <Box
-          component='h1'
           sx={{
             width: '100%',
-            mr: '10%',
-            fontSize: '3.5rem',
-            color: '#ffff',
-            letterSpacing: '.3rem',
-            textAlign: 'right',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            mt: '-15%',
           }}
         >
-          PulsarPortrait
+          <Avatar
+            src='https://cdn.discordapp.com/attachments/1120822627880144916/1131335983279906918/LogoTransparent.png'
+            sx={{
+              height: '700px',
+              width: '500px',
+              alignItems: 'left',
+              ml: '5%',
+            }}
+          />
+          <Box
+            sx={{
+              fontSize: '3.5rem',
+              color: '#ffff',
+              letterSpacing: '.3rem',
+              textAlign: 'right',
+              flex: 1,
+              mb: '-5%',
+            }}
+          >
+            PulsarPortrait
+          </Box>
         </Box>
         <Box
           component='p'
@@ -91,6 +109,7 @@ export default function Body() {
             mr: '10%',
             color: '#ffff',
             fontSize: '1.8rem',
+            mt: '-18%',
           }}
         >
           PulsarPortait is a tool made for developers to help visualize Apache
@@ -290,8 +309,19 @@ export default function Body() {
             textAlign: 'center',
           }}
         >
-          Fork the repo from our github organization, spin up your Apache Pulsar
-          cluster, then run <code>docker compose up</code> in your terminal.
+          if you already have a project that uses Pulsar and do not want to edit
+          your compose.yml file, please fork and clone our{' '}
+          <a
+            href='https://github.com/oslabs-beta/PulsarPortrait/blob/main/README.md'
+            target='._blank'
+            style={{
+              color: '#1976d2',
+              textDecoration: 'underline',
+            }}
+          >
+            GitHub Repo
+          </a>{' '}
+          and follow the instructions in the README
         </Box>
       </Container>
       <Container
