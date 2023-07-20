@@ -29,7 +29,8 @@ function Navbar() {
             href='/'
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              // display: { xs: 'none', md: 'flex' },
+              display: 'flex',
               fontFamily: 'Rajdhani',
               fontWeight: 700,
               letterSpacing: '.4rem',
@@ -39,7 +40,7 @@ function Navbar() {
           >
             PulsarPortrait
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: 'flex' }}>
             <Link to='contact-section' smooth={true} duration={500}>
               <Button sx={{ my: 2, color: '#ffff', display: 'block' }}>
                 Contact
