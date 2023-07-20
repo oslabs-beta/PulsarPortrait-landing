@@ -7,7 +7,7 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import CheckIcon from '@mui/icons-material/Check';
-import { GitHub } from '@mui/icons-material';
+import { BorderColor, GitHub } from '@mui/icons-material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Avatar from '@mui/material/Avatar';
 import Alert from '@mui/material/Alert';
@@ -63,59 +63,95 @@ export default function Body() {
           // bgcolor: '#e0e0e0',
           maxWidth: '100%',
           height: '100vh',
-          display: {
-            md: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-end',
-            justifyContent: 'center',
-          },
+          // height: '100%',
+          // display: {
+          //   md: 'flex',
+          //   flexDirection: 'column',
+            alignItems: {xs: 'center', md:'flex-end'},
+          //   justifyContent: 'center',
+          // },
+          display: 'flex',
+          flexDirection: 'column',
+          // alignItems: 'flex-end',
+          justifyContent: 'center',
+          border: 1,
+          borderColor: 'yellow'
         }}
       >
+        {/* start of pink */}
         <Box
           sx={{
             width: '100%',
             display: 'flex',
+            flexDirection: {xs: 'column', md: 'row'},
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'space-between',
             mt: '-15%',
+            border: 1,
+            borderColor: 'pink',
           }}
         >
-          <Avatar
+          <Box component='img' 
             src='https://cdn.discordapp.com/attachments/1120822627880144916/1131335983279906918/LogoTransparent.png'
             sx={{
-              height: '700px',
-              width: '500px',
-              alignItems: 'left',
-              ml: '5%',
-            }}
-          />
+              border: '1px solid black',
+              maxWidth: '400px',
+              // width: {xs: '75%', md: '50%'}
+              width: {xs: '60%', md: '50%'}
+          }}
+          >
+
+          </Box>
+          {/* start of green */}
+          <Box sx={{
+            // display: { md: 'flex', flexDirection: 'column' },
+            display: 'flex',
+            flexDirection: 'column',
+            border: 4,
+            borderColor: 'green',
+            width: {xs: '100%', md: '50%'}
+          }}>
+            {/* start of white */}
           <Box
             sx={{
-              fontSize: '3.5rem',
+              fontSize: {xs: '3rem', md: '3.5rem'},
               color: '#ffff',
               letterSpacing: '.3rem',
-              textAlign: 'right',
-              flex: 1,
-              mb: '-5%',
+              textAlign: {xs: 'center', md: 'right'},
+              // flex: 1,
+              // mb: '-5%',
+              border: 1,
+              borderColor: 'white'
             }}
           >
             PulsarPortrait
+          {/* end of white */}
           </Box>
-        </Box>
+          
+        {/* start of red */}
         <Box
           component='p'
           sx={{
-            maxWidth: '40%',
-            mr: '10%',
+            // maxWidth: '40%',
+            width: '100%',
+            // mr: '10%',
             color: '#ffff',
             fontSize: '1.8rem',
-            mt: '-18%',
+            textAlign: {xs: 'center', md: 'right'},
+            // mt: '-18%',
+            border: 1,
+            borderColor: 'red'
           }}
         >
           PulsarPortait is a tool made for developers to help visualize Apache
           Pulsar cluster metrics.
+          {/* end of red */}
         </Box>
-        <Box sx={{ mr: '10%', display: { md: 'flex' } }}>
+        {/* end of green */}
+        </Box>
+        {/* end of pink */}
+        </Box>
+        <Box sx={{display: 'flex', border: 1, borderColor: 'blue' }}>
           <Link to='get-started' smooth={true} duration={500} offset={-70}>
             <Button
               sx={{
@@ -149,6 +185,7 @@ export default function Body() {
               Learn More
             </Button>
           </Link>
+          {/* end of pink */}
         </Box>
       </Container>
       <Container
@@ -166,7 +203,7 @@ export default function Body() {
           sx={{
             display: {
               md: 'flex',
-              width: '30%',
+              // width: '30%',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'flex-start',
@@ -184,7 +221,7 @@ export default function Body() {
           >
             Features
           </Box>
-          <Box component='p' sx={{ fontSize: '1.8em' }}>
+          <Box component='p' sx={{ fontSize: '1.8rem', border: '1px solid red', width: '100%' }}>
             View critical pulsar broker metrics like throughput, backlog, CPU
             resource consumption and more.
           </Box>
@@ -329,12 +366,17 @@ export default function Body() {
         maxWidth={false}
         sx={{
           bgcolor: '#cbcbcb',
-          maxWidth: '100%',
-          display: {
-            md: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-          },
+          // maxWidth: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          flexWrap: 'wrap'
+
+          // display: {
+          //   md: 'flex',
+          //   flexDirection: 'column',
+          //   alignItems: 'flex-start',
+          // },
         }}
       >
         <Box
@@ -356,18 +398,26 @@ export default function Body() {
           sx={{
             mb: '100px',
             width: '100%',
-            display: {
-              md: 'flex',
-              justifyContent: 'space-evenly',
-              alignItems: 'center',
-            },
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            gap: '20px',
+            flexWrap: 'wrap',
+            border: '1px solid green'
+            // display: {
+            //   md: 'flex',
+            //   justifyContent: 'space-evenly',
+            //   alignItems: 'center',
+            // },
           }}
         >
           <Box className='info-tile'>
             <Box
               sx={{
                 m: '10%',
-                display: { md: 'flex', justifyContent: 'center' },
+                // display: { md: 'flex', justifyContent: 'center' },
+                display: 'flex',
+                justifyContent: 'center'
               }}
             >
               <Avatar
@@ -391,7 +441,9 @@ export default function Body() {
             <Box
               sx={{
                 m: '10%',
-                display: { md: 'flex', justifyContent: 'center' },
+                display: 'flex',
+                justifyContent: 'center'
+                // { md: 'flex', justifyContent: 'center' },
               }}
             >
               <Avatar
@@ -415,7 +467,8 @@ export default function Body() {
             <Box
               sx={{
                 m: '10%',
-                display: { md: 'flex', justifyContent: 'center' },
+                display: 'flex',
+                justifyContent: 'center'
               }}
             >
               <Avatar
@@ -439,7 +492,8 @@ export default function Body() {
             <Box
               sx={{
                 m: '10%',
-                display: { md: 'flex', justifyContent: 'center' },
+                display: 'flex',
+                justifyContent: 'center'
               }}
             >
               <Avatar
@@ -463,4 +517,4 @@ export default function Body() {
       </Container>
     </>
   );
-}
+            }
