@@ -134,7 +134,7 @@ export default function Body() {
               Get Started
             </Button>
           </Link>
-          <Link to='features' smooth={true} duration={500} offset={-200}>
+          <Link to='features' smooth={true} duration={500} offset={-60}>
             <Button
               sx={{
                 my: 2,
