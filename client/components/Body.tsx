@@ -74,8 +74,8 @@ export default function Body() {
           flexDirection: 'column',
           // alignItems: 'flex-end',
           justifyContent: 'center',
-          border: 1,
-          borderColor: 'yellow'
+          // border: 1,
+          // borderColor: 'yellow'
         }}
       >
         {/* start of pink */}
@@ -87,14 +87,14 @@ export default function Body() {
             alignItems: 'center',
             justifyContent: 'space-between',
             mt: '-15%',
-            border: 1,
-            borderColor: 'pink',
+            // border: 1,
+            // borderColor: 'pink',
           }}
         >
           <Box component='img' 
             src='https://cdn.discordapp.com/attachments/1120822627880144916/1131335983279906918/LogoTransparent.png'
             sx={{
-              border: '1px solid black',
+              // border: '1px solid black',
               maxWidth: '400px',
               // width: {xs: '75%', md: '50%'}
               width: {xs: '60%', md: '50%'}
@@ -107,9 +107,10 @@ export default function Body() {
             // display: { md: 'flex', flexDirection: 'column' },
             display: 'flex',
             flexDirection: 'column',
-            border: 4,
-            borderColor: 'green',
-            width: {xs: '100%', md: '50%'}
+            // border: 4,
+            // borderColor: 'green',
+            width: {xs: '100%', md: '50%'},
+            gap: '5px'
           }}>
             {/* start of white */}
           <Box
@@ -120,8 +121,8 @@ export default function Body() {
               textAlign: {xs: 'center', md: 'right'},
               // flex: 1,
               // mb: '-5%',
-              border: 1,
-              borderColor: 'white'
+              // border: 1,
+              // borderColor: 'white'
             }}
           >
             PulsarPortrait
@@ -139,8 +140,8 @@ export default function Body() {
             fontSize: '1.8rem',
             textAlign: {xs: 'center', md: 'right'},
             // mt: '-18%',
-            border: 1,
-            borderColor: 'red'
+            // border: 1,
+            // borderColor: 'red'
           }}
         >
           PulsarPortait is a tool made for developers to help visualize Apache
@@ -151,7 +152,7 @@ export default function Body() {
         </Box>
         {/* end of pink */}
         </Box>
-        <Box sx={{display: 'flex', border: 1, borderColor: 'blue' }}>
+        <Box sx={{display: 'flex'}}>
           <Link to='get-started' smooth={true} duration={500} offset={-70}>
             <Button
               sx={{
@@ -221,7 +222,7 @@ export default function Body() {
           >
             Features
           </Box>
-          <Box component='p' sx={{ fontSize: '1.8rem', border: '1px solid red', width: '100%' }}>
+          <Box component='p' sx={{ fontSize: '1.8rem', width: '100%' }}>
             View critical pulsar broker metrics like throughput, backlog, CPU
             resource consumption and more.
           </Box>
@@ -297,11 +298,14 @@ export default function Body() {
               borderRadius: '10px',
               p: '20px',
               mb: '20px',
-              display: {
-                md: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'start',
-              },
+              // display: {
+              //   md: 'flex',
+              //   justifyContent: 'space-between',
+              //   alignItems: 'start',
+              // },
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'start'
             }}
           >
             <Box component='pre' sx={{ whiteSpace: 'pre', overflowX: 'auto' }}>
@@ -403,7 +407,7 @@ export default function Body() {
             alignItems: 'center',
             gap: '20px',
             flexWrap: 'wrap',
-            border: '1px solid green'
+            // border: '1px solid green'
             // display: {
             //   md: 'flex',
             //   justifyContent: 'space-evenly',
